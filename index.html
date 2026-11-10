@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Góc phố Anh Em SCA – Men’s Day</title>
+<meta name="description" content="Men’s Day tại Góc phố Anh Em SCA: trà đá, trà chanh, ăn vặt và lời chúc dành cho anh em.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wall:#F2B01E; --wall-d:#D9960A; --door:#0F5132; --mint:#A8D5BA;
+  --red:#C8102E; --blue:#1F4FD8; --cream:#FFF4D6; --chalk:#22302A; --ink:#2A1B0E;
+  --orange:#F26B1D;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:"Baloo 2","Be Vietnam Pro",sans-serif;line-height:1.1}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+/* nav: mái hiên xanh – kem */
+nav{position:sticky;top:0;z-index:10;background:repeating-linear-gradient(90deg,var(--door) 0 44px,var(--cream) 44px 88px);border-bottom:4px solid var(--door)}
+nav ul{list-style:none;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:8px}
+nav a{display:inline-block;text-decoration:none;font-weight:700;padding:4px 14px;border-radius:99px;background:var(--cream);color:var(--door);border:2px solid var(--door);transition:transform .15s,background .15s}
+nav a:hover{background:var(--red);color:#fff;border-color:var(--red);transform:translateY(-2px) rotate(-2deg)}
+
+section{padding:72px 20px}
+.wrap{max-width:1040px;margin:0 auto}
+h2{font-size:clamp(2rem,5vw,3.2rem);color:var(--door);margin-bottom:10px}
+.lead{max-width:60ch;margin-bottom:32px}
+
+/* hero */
+#top{background:var(--wall);position:relative;overflow:hidden;padding-bottom:56px;text-align:center}
+.lights{display:flex;justify-content:space-around;padding:0 4%}
+.lights i{width:14px;height:20px;border-radius:50% 50% 50% 50%/40% 40% 60% 60%;background:#FFF3B0;box-shadow:0 0 14px 6px rgba(255,240,150,.9);animation:glow 2.4s infinite ease-in-out}
+.lights i:nth-child(2n){animation-delay:.6s}.lights i:nth-child(3n){animation-delay:1.2s}
+@keyframes glow{50%{opacity:.35;box-shadow:0 0 6px 2px rgba(255,240,150,.5)}}
+.flags{display:flex;justify-content:center;gap:clamp(14px,5vw,60px);margin:6px 0 10px}
+.flags b{width:34px;height:42px;background:var(--red);clip-path:polygon(0 0,100% 0,50% 100%);display:grid;place-items:start center;color:var(--wall);font-size:20px;transform-origin:top center;animation:sway 3s infinite ease-in-out}
+.flags b:nth-child(even){animation-delay:.8s}
+@keyframes sway{50%{transform:rotate(9deg)}}
+.sign{display:inline-block;background:#FBEFD0;border:6px double var(--red);border-radius:22px;padding:14px 44px 18px;margin:10px 12px;box-shadow:0 8px 0 rgba(0,0,0,.18)}
+.sign small{display:block;color:var(--red);font:800 clamp(1.4rem,4vw,2.2rem)/1 "Baloo 2",sans-serif}
+.sign h1{color:var(--red);font-size:clamp(2.6rem,9vw,5.6rem);letter-spacing:.01em}
+.tag{font:800 clamp(1.1rem,2.6vw,1.5rem)/1.3 "Baloo 2",sans-serif;color:var(--door);margin:8px 0 20px}
+.photo{max-width:980px;margin:0 auto;border:8px solid var(--door);border-radius:18px;overflow:hidden;box-shadow:0 12px 0 rgba(0,0,0,.2)}
+.count{display:flex;justify-content:center;gap:12px;margin-top:30px;flex-wrap:wrap}
+.count div{background:var(--chalk);color:#fff;border:5px solid #C99A55;border-radius:10px;min-width:84px;padding:8px 10px}
+.count strong{display:block;font:800 2.2rem/1 "Baloo 2",sans-serif}
+.count span{font-size:.85rem}
+
+/* điểm bấm trên ảnh */
+.photo{position:relative}
+.hot{position:absolute;display:block;background:transparent;border:3px dashed transparent;border-radius:12px;cursor:pointer;animation:hint 2.2s infinite}
+.hot:hover,.hot:focus-visible{border-color:#fff;background:rgba(255,255,255,.22);animation:none}
+.hot span{position:absolute;left:50%;bottom:calc(100% + 6px);transform:translateX(-50%);background:var(--chalk);color:#fff;font:600 .8rem "Be Vietnam Pro",sans-serif;padding:3px 10px;border-radius:99px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s}
+.hot:hover span,.hot:focus-visible span{opacity:1}
+@keyframes hint{50%{border-color:rgba(255,255,255,.9);background:rgba(255,255,255,.15)}}
+.hint{margin-top:14px;font-weight:700;color:var(--door)}
+
+/* đồ ăn */
+.food{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;max-width:900px;margin:0 auto}
+.food div{background:var(--cream);color:var(--ink);border:4px solid var(--wall);border-radius:16px;padding:18px 10px;text-align:center;transition:transform .2s}
+.food div:hover{transform:translateY(-6px) rotate(-2deg)}
+.food em{display:block;font-style:normal;font-size:2.8rem;line-height:1.2}
+.food b{display:block;font:800 1.2rem "Baloo 2",sans-serif;color:var(--door)}
+.food small{font-size:.85rem}
+.sub{font:800 1.8rem "Baloo 2",sans-serif;color:var(--wall);text-align:center}
+
+/* hộp thông tin */
+dialog{border:6px double var(--red);border-radius:20px;background:#FBEFD0;color:var(--ink);padding:26px 28px;max-width:min(520px,92vw);margin:auto;box-shadow:0 14px 0 rgba(0,0,0,.25)}
+dialog::backdrop{background:rgba(20,30,25,.65)}
+dialog[open]{animation:pop .25s ease-out}
+@keyframes pop{from{transform:scale(.85);opacity:0}}
+dialog h3{font-size:2rem;color:var(--red);margin-bottom:10px}
+dialog ul{padding-left:0;list-style:none}
+dialog li{padding:8px 0;border-bottom:2px dashed rgba(15,81,50,.3)}
+dialog li:last-child{border:0}
+dialog li b{color:var(--door)}
+dialog .x{margin-top:16px;font:800 1.1rem "Baloo 2",sans-serif;background:var(--door);color:#fff;border:0;border-radius:99px;padding:8px 24px;cursor:pointer}
+
+/* info */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card{padding:22px;border-radius:14px;border:3px solid var(--door);background:#fff}
+.card:nth-child(1){background:var(--mint)}.card:nth-child(3){background:#FFD9A8}
+.card h3{font-size:1.5rem;margin-bottom:6px;color:var(--door)}
+.map-note{margin-top:20px;font-size:.95rem}
+
+/* menu: bảng phấn */
+#menu{background:var(--door);color:#fff}
+#menu h2{color:var(--wall)}
+.board{background:var(--chalk);border:14px solid #B97A3E;border-radius:10px;padding:28px;max-width:560px;margin:0 auto;box-shadow:0 12px 0 rgba(0,0,0,.25)}
+.board h3{font:600 2.4rem "Baloo 2",cursive;text-align:center;margin-bottom:12px}
+.board li{list-style:none;display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:2px dashed rgba(255,255,255,.3);font-size:1.15rem}
+.board li:last-child{border:0}
+.board li span:last-child{color:var(--wall);font-weight:700;white-space:nowrap}
+.menu-wrap{display:grid;grid-template-columns:1fr;gap:28px}
+.stools{display:flex;justify-content:center;gap:14px;margin-top:30px}
+.stool{width:54px;height:40px;border-radius:8px 8px 4px 4px;cursor:pointer;border:0;position:relative;transition:transform .2s}
+.stool::before,.stool::after{content:"";position:absolute;bottom:-18px;width:8px;height:20px;background:inherit;border-radius:0 0 3px 3px}
+.stool::before{left:7px}.stool::after{right:7px}
+.stool:hover,.stool.hop{animation:hop .5s}
+@keyframes hop{40%{transform:translateY(-22px) rotate(-6deg)}}
+
+/* forms */
+#dangky{background:var(--wall)}
+form{background:var(--cream);border:4px solid var(--door);border-radius:16px;padding:26px;max-width:620px;box-shadow:0 8px 0 rgba(0,0,0,.2)}
+label{display:block;font-weight:700;margin:14px 0 4px}
+input,select,textarea{width:100%;font:inherit;padding:10px 12px;border:2px solid var(--door);border-radius:10px;background:#fff}
+textarea{min-height:90px;resize:vertical}
+button.cta{margin-top:20px;font:800 1.2rem "Baloo 2",sans-serif;background:var(--red);color:#fff;border:0;border-radius:99px;padding:10px 28px;cursor:pointer;box-shadow:0 5px 0 #8c0b20;transition:transform .1s,box-shadow .1s}
+button.cta:active{transform:translateY(4px);box-shadow:0 1px 0 #8c0b20}
+.msg{margin-top:14px;font-weight:700;color:var(--door)}
+.msg.err{color:var(--red)}
+
+/* bình chọn + lời chúc */
+.vote{display:grid;gap:10px;max-width:620px;margin-bottom:50px}
+.vote button{position:relative;text-align:left;font:700 1.05rem "Be Vietnam Pro",sans-serif;padding:12px 16px;border:3px solid var(--door);border-radius:12px;background:#fff;cursor:pointer;overflow:hidden}
+.vote button .bar{position:absolute;inset:0 auto 0 0;width:0;background:var(--mint);transition:width .6s;z-index:0}
+.vote button span{position:relative;z-index:1;display:flex;justify-content:space-between;gap:10px}
+.vote button:hover{border-color:var(--red)}
+.vote button.mine{border-color:var(--red)}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;margin-top:20px}
+.note{padding:16px;border-radius:4px;box-shadow:3px 6px 0 rgba(0,0,0,.15);transform:rotate(var(--r,0deg))}
+.note p{margin-bottom:8px}.note small{font-weight:700}
+.note:nth-child(4n+1){background:#FFE98A}.note:nth-child(4n+2){background:#B8E2C8}
+.note:nth-child(4n+3){background:#FFC9B0}.note:nth-child(4n){background:#C9D8FF}
+
+footer{background:var(--chalk);color:#fff;text-align:center;padding:32px 20px}
+footer b{color:var(--wall)}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Điều hướng">
+<ul>
+  <li><a href="#top">Trang chủ</a></li>
+  <li><a href="#thongtin">Thông tin</a></li>
+  <li><a href="#menu">Menu</a></li>
+  <li><a href="#dangky">Đăng ký</a></li>
+  <li><a href="#binhchon">Bình chọn</a></li>
+  <li><a href="#loichuc">Lời chúc</a></li>
+</ul>
+</nav>
+
+<header id="top">
+  <div class="lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="flags" aria-hidden="true"><b>★</b><b>★</b><b>★</b><b>★</b><b>★</b><b>★</b><b>★</b></div>
+  <div class="sign"><small>Góc phố</small><h1>Anh Em SCA</h1></div>
+  <p class="tag">Men’s Day 19/11 – Ghé quán, làm ly trà đá, chúc nhau một câu thật lòng</p>
+  <div class="photo">
+    <img src="goc-pho.png" alt="Góc phố Anh Em SCA với tường vàng, cửa xanh, xe đạp cũ, bàn ghế nhựa và quầy trà đá">
+    <button class="hot" data-open="chuongtrinh" aria-label="Xem chương trình" style="left:35.6%;top:13.3%;width:28.7%;height:16.5%"><span>Bấm xem chương trình</span></button>
+    <button class="hot" data-open="huongthien" aria-label="Phố Hướng Thiện: xem lời chúc" style="left:69.1%;top:19.1%;width:11.4%;height:12.5%"><span>Phố Hướng Thiện</span></button>
+    <button class="hot" data-open="giaisang" aria-label="Phố Giải Sáng: xem lời chúc" style="left:72.7%;top:30.6%;width:11.5%;height:11.2%"><span>Phố Giải Sáng</span></button>
+  </div>
+  <p class="hint">Bấm vào biển “Anh Em SCA” để xem chương trình, bấm vào hai biển tên phố để đọc lời chúc.</p>
+  <div class="count" id="count" aria-live="off"></div>
+</header>
+
+<section id="thongtin">
+<div class="wrap">
+  <h2>Quán mở cửa lúc nào, ở đâu?</h2>
+  <p class="lead">Một góc phố nhỏ giữa văn phòng. Kéo ghế nhựa ra ngồi, uống ly trà đá và nghỉ tay cùng anh em.</p>
+  <div class="cards">
+    <div class="card"><h3>Thời gian</h3><p>19/11/2026<br>15:00 – 17:00<br><em>(thay bằng giờ thật)</em></p></div>
+    <div class="card"><h3>Địa điểm</h3><p>Tầng … , khu vực …<br>Phố Hướng Thiện, ngay cạnh phố Giải Sáng</p></div>
+    <div class="card"><h3>Ai tham gia?</h3><p>Toàn thể anh em SCA, và cả các bạn nữ ghé chúc mừng.</p></div>
+  </div>
+  <p class="map-note">Ban tổ chức: <strong>…</strong> – Liên hệ: <strong>…</strong></p>
+</div>
+</section>
+
+<section id="menu">
+<div class="wrap menu-wrap">
+  <div style="text-align:center"><h2>Menu hôm nay</h2><p>Miễn phí cho anh em. Bấm vào ghế để xem ghế nhảy.</p></div>
+  <div class="board">
+    <h3>Menu</h3>
+    <ul>
+      <li><span>Trà chanh</span><span>Free</span></li>
+      <li><span>Trà đá</span><span>Free</span></li>
+      <li><span>Ăn vặt (hạt dưa, kẹo lạc, ô mai)</span><span>Free</span></li>
+      <li><span>Nước chanh muối</span><span>Free</span></li>
+    </ul>
+  </div>
+  <p class="sub">Đồ ăn vặt</p>
+  <div class="food">
+    <div><em>🍉</em><b>Hạt dưa</b><small>Nhâm nhi cả buổi</small></div>
+    <div><em>🥜</em><b>Kẹo lạc</b><small>Giòn, ngọt vừa</small></div>
+    <div><em>🍑</em><b>Ô mai mơ</b><small>Chua ngọt, mặn mòi</small></div>
+    <div><em>🍪</em><b>Bánh quy</b><small>Ăn kèm trà đá</small></div>
+    <div><em>🍬</em><b>Kẹo kéo</b><small>Tuổi thơ của anh em</small></div>
+    <div><em>🥭</em><b>Xoài lắc</b><small>Cay nhẹ, chua nhẹ</small></div>
+  </div>
+  <div class="stools" aria-hidden="true">
+    <button class="stool" style="background:var(--red)" tabindex="-1"></button>
+    <button class="stool" style="background:var(--orange)" tabindex="-1"></button>
+    <button class="stool" style="background:var(--blue)" tabindex="-1"></button>
+    <button class="stool" style="background:var(--red)" tabindex="-1"></button>
+    <button class="stool" style="background:var(--orange)" tabindex="-1"></button>
+  </div>
+</div>
+</section>
+
+<section id="dangky">
+<div class="wrap">
+  <h2>Đăng ký ghế ngồi</h2>
+  <p class="lead">Điền tên để ban tổ chức chuẩn bị đủ trà và ghế.</p>
+  <form id="regForm">
+    <label for="rName">Họ và tên</label>
+    <input id="rName" name="name" required maxlength="60" autocomplete="name">
+    <label for="rDept">Phòng ban / team</label>
+    <input id="rDept" name="dept" required maxlength="60">
+    <label for="rDrink">Đồ uống yêu thích</label>
+    <select id="rDrink" name="drink">
+      <option>Trà chanh</option><option>Trà đá</option><option>Nước chanh muối</option>
+    </select>
+    <button class="cta" type="submit">Giữ ghế cho tôi</button>
+    <p class="msg" id="regMsg" role="status"></p>
+  </form>
+</div>
+</section>
+
+<section id="binhchon">
+<div class="wrap">
+  <h2>Bình chọn: ly nào đáng uống nhất?</h2>
+  <p class="lead">Mỗi người chọn một ly. Chọn lại sẽ đổi phiếu của bạn.</p>
+  <div class="vote" id="vote"></div>
+</div>
+</section>
+
+<section id="loichuc" style="background:var(--mint)">
+<div class="wrap">
+  <h2>Tường lời chúc</h2>
+  <p class="lead">Viết một câu chúc cho anh em. Lời chúc sẽ dán lên tường ngay.</p>
+  <form id="wishForm" style="max-width:520px">
+    <label for="wName">Tên của bạn</label>
+    <input id="wName" maxlength="40" required>
+    <label for="wText">Lời chúc</label>
+    <textarea id="wText" maxlength="200" required></textarea>
+    <button class="cta" type="submit">Dán lên tường</button>
+  </form>
+  <div class="wall" id="wall"></div>
+</div>
+</section>
+
+<footer>
+  <p><b>Góc phố Anh Em SCA</b> – Men’s Day 2026</p>
+  <p>Chúc anh em một ngày thật nhẹ nhàng.</p>
+</footer>
+
+<dialog id="chuongtrinh" aria-labelledby="t1">
+  <h3 id="t1">Chương trình Men’s Day</h3>
+  <ul>
+    <li><b>15:00</b> – Mở cửa quán, nhận ghế và ly trà đá đầu tiên</li>
+    <li><b>15:15</b> – Lời chào của ban tổ chức</li>
+    <li><b>15:30</b> – Trò chơi dân gian cùng anh em</li>
+    <li><b>16:15</b> – Bốc thăm may mắn</li>
+    <li><b>16:45</b> – Chụp ảnh check-in trước tường vàng</li>
+  </ul>
+  <p style="margin-top:10px;font-size:.9rem"><em>Lịch tạm, ban tổ chức sẽ cập nhật.</em></p>
+  <form method="dialog"><button class="x">Đóng</button></form>
+</dialog>
+
+<dialog id="huongthien" aria-labelledby="t2">
+  <h3 id="t2">Phố Hướng Thiện</h3>
+  <ul>
+    <li>Chúc anh em luôn giữ được cái tâm hiền và cái đầu tỉnh.</li>
+    <li>Chúc anh em gặp toàn người tử tế, làm toàn việc đáng làm.</li>
+    <li>Chúc anh em đủ sức giúp người mà vẫn đủ thời gian cho mình.</li>
+    <li>Chúc những điều tốt anh em đã gieo sớm có ngày nở hoa.</li>
+  </ul>
+  <form method="dialog"><button class="x">Đóng</button></form>
+</dialog>
+
+<dialog id="giaisang" aria-labelledby="t3">
+  <h3 id="t3">Phố Giải Sáng</h3>
+  <ul>
+    <li>Chúc anh em giải tỏa hết deadline, sáng bừng cả tuần mới.</li>
+    <li>Chúc anh em ngủ đủ giấc, tỉnh dậy không còn thấy mệt.</li>
+    <li>Chúc anh em được cười thật to, không phải giữ hình tượng.</li>
+    <li>Chúc anh em mọi vướng mắc đều có lời giải, ly trà nào cũng mát.</li>
+  </ul>
+  <form method="dialog"><button class="x">Đóng</button></form>
+</dialog>
+
+<script>
+/* ===== mở hộp thông tin khi bấm vào ảnh ===== */
+document.querySelectorAll("[data-open]").forEach(b => b.addEventListener("click", () => document.getElementById(b.dataset.open).showModal()));
+document.querySelectorAll("dialog").forEach(d => d.addEventListener("click", e => { if(e.target === d) d.close(); }));
+
+/* ===== CẤU HÌNH – sửa ở đây ===== */
+const CONFIG = {
+  eventDate: "2026-11-19T15:00:00+07:00",
+  // Dán link Formspree / Google Apps Script để nhận dữ liệu thật. Để trống = chỉ lưu trên máy người xem.
+  registerEndpoint: "",
+  voteOptions: ["Trà chanh", "Trà đá", "Nước chanh muối", "Ăn vặt thập cẩm"],
+  seedWishes: [
+    {name:"Ban tổ chức", text:"Chúc anh em luôn khỏe, nhẹ đầu, và tan ca đúng giờ."},
+    {name:"Một người bạn", text:"Cảm ơn anh em đã gánh team suốt năm qua."}
+  ]
+};
+
+/* ===== tiện ích lưu trữ ===== */
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+};
+const esc = s => s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* ===== đếm ngược ===== */
+const countEl = document.getElementById("count");
+function tick(){
+  const diff = new Date(CONFIG.eventDate) - new Date();
+  if(diff <= 0){ countEl.innerHTML = "<div><strong>Quán đang mở!</strong><span>Ghé ngay nhé</span></div>"; return; }
+  const d = Math.floor(diff/864e5), h = Math.floor(diff%864e5/36e5), m = Math.floor(diff%36e5/6e4), s = Math.floor(diff%6e4/1e3);
+  countEl.innerHTML = [[d,"ngày"],[h,"giờ"],[m,"phút"],[s,"giây"]].map(x=>`<div><strong>${x[0]}</strong><span>${x[1]}</span></div>`).join("");
+}
+tick(); setInterval(tick, 1000);
+
+/* ===== ghế nhảy ===== */
+document.querySelectorAll(".stool").forEach(b => b.addEventListener("click", () => {
+  b.classList.remove("hop"); void b.offsetWidth; b.classList.add("hop");
+}));
+
+/* ===== đăng ký ===== */
+document.getElementById("regForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target, msg = document.getElementById("regMsg");
+  const entry = {name:f.name.value.trim(), dept:f.dept.value.trim(), drink:f.drink.value, at:new Date().toISOString()};
+  const list = store.get("sca_reg", []); list.push(entry); store.set("sca_reg", list);
+  msg.className = "msg";
+  if(CONFIG.registerEndpoint){
+    try{
+      const r = await fetch(CONFIG.registerEndpoint, {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"}, body:JSON.stringify(entry)});
+      if(!r.ok) throw new Error();
+    }catch(err){ msg.className = "msg err"; msg.textContent = "Chưa gửi được đăng ký. Bạn thử lại sau ít phút nhé."; return; }
+  }
+  msg.textContent = `Đã giữ ghế cho ${entry.name}. Hẹn gặp ở góc phố!`;
+  f.reset();
+});
+
+/* ===== bình chọn ===== */
+const voteEl = document.getElementById("vote");
+function renderVotes(){
+  const votes = store.get("sca_votes", {}), mine = store.get("sca_myvote", null);
+  const total = Object.values(votes).reduce((a,b)=>a+b, 0);
+  voteEl.innerHTML = CONFIG.voteOptions.map(o => {
+    const n = votes[o] || 0, pct = total ? Math.round(n*100/total) : 0;
+    return `<button type="button" data-o="${esc(o)}" class="${mine===o?"mine":""}" aria-pressed="${mine===o}">
+      <i class="bar" style="width:${pct}%"></i><span><b>${esc(o)}</b><b>${n} phiếu</b></span></button>`;
+  }).join("");
+}
+voteEl.addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  const o = b.dataset.o, votes = store.get("sca_votes", {}), mine = store.get("sca_myvote", null);
+  if(mine === o) return;
+  if(mine) votes[mine] = Math.max(0, (votes[mine]||0) - 1);
+  votes[o] = (votes[o]||0) + 1;
+  store.set("sca_votes", votes); store.set("sca_myvote", o); renderVotes();
+});
+renderVotes();
+
+/* ===== lời chúc ===== */
+const wall = document.getElementById("wall");
+function renderWishes(){
+  const list = CONFIG.seedWishes.concat(store.get("sca_wishes", []));
+  wall.innerHTML = list.map((w,i) => `<div class="note" style="--r:${(i%5-2)*1.4}deg"><p>${esc(w.text)}</p><small>– ${esc(w.name)}</small></div>`).join("");
+}
+document.getElementById("wishForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const list = store.get("sca_wishes", []);
+  list.push({name:e.target.wName.value.trim(), text:e.target.wText.value.trim()});
+  store.set("sca_wishes", list); e.target.reset(); renderWishes();
+});
+renderWishes();
+</script>
+</body>
+</html>
